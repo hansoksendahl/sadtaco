@@ -6,7 +6,7 @@
   "devDependencies": {
     "mime": "latest",
     "http-auth": "latest",
-    "host-with-node": "latest",
+    "hostwithnode": "latest",
     "smash": "latest",
     "smash": "~0.0.8",
     "uglify-js": "2.3.6",

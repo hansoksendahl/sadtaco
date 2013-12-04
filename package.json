@@ -2,8 +2,6 @@
   "name": "my-app",
   "version": "0.0.1",
   "dependencies": {
-  },
-  "devDependencies": {
     "mime": "latest",
     "http-auth": "latest",
     "hostwithnode": "latest",

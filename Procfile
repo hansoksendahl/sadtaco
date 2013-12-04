@@ -1,1 +1,1 @@
-web: exec hostwithnode $PORT
+web: node web.js

@@ -1,1 +1,1 @@
-web: host-with-node
+web: node host-with-node $PORT

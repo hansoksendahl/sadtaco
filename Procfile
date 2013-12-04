@@ -1,1 +1,1 @@
-web: sh hostwithnode $PORT
+web: exec hostwithnode $PORT

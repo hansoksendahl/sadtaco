@@ -4,7 +4,7 @@
   "dependencies": {
     "mime": "1.2.9",
     "hostwithnode": "0.0.9",
-    "smash": "~0.0.8",
+    "smash": "~0.0.8"
   },
   "engines": {
     "node": "0.6.x",

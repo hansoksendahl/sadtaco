@@ -2,8 +2,8 @@
   "name": "my-app",
   "version": "0.0.1",
   "dependencies": {
-    "mime": "latest",
-    "hostwithnode": "latest",
+    "mime": "1.2.x",
+    "hostwithnode": "0.0.9",
     "smash": "~0.0.8",
   },
   "engines": {

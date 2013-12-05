@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "mime": "latest",
-    "http-auth": "latest",
     "hostwithnode": "latest",
     "smash": "~0.0.8",
   },

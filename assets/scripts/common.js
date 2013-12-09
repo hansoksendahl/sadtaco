@@ -4,7 +4,7 @@ var body = d3.select(document.body)
   , stage
 
 function reinit (elements) {
-    vis.elements(elements)
+    vis.elements([].concat(elements))
     vis(body)
     
     stage = d3.select("#stage")

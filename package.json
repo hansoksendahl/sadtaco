@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "mime": "1.2.9",
-    "hostwithnode": "0.1.5",
+    "hostwithnode": "0.1.6",
     "smash": "~0.0.8"
   },
   "engines": {

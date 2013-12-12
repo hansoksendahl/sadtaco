@@ -17,7 +17,8 @@
       },
       "on": {
           "click": function () {
-              localStorage.taco = prompt("What would you like me to remember?", localStorage.taco)
+              var memory = prompt("What would you like me to remember?", localStorage.taco)
+              if (memory !== null) localStorage.taco = memory
           }
       }
     }

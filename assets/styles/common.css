@@ -1,11 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Chewy);
-
 html, body {
   height: 100%;
-  font-family: 'Chewy', sans-serif;
 }
 
 body {
   margin: 0;
   overflow: hidden;
+}
+
+body tspan {
+  font-family: 'Chewy', cursive;
 }

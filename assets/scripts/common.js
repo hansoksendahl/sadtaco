@@ -10,14 +10,15 @@ var body = d3.select(document.body)
   , draggables
   , speech
   , ingredient
-  , list = {
+  , list
+
+function reinit () {
+  list = {
     meat: 1,
     leaf: 3,
     tomato: 2,
     cheese: 1
   }
-
-function reinit () {
   taco = d3.select("#taco")
   
   taco.remove()

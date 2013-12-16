@@ -48,6 +48,7 @@ function reinit () {
         .on("dragend", addIngredient)
         
     shell
+        .attr("onclick", "void(0)")
         .on("mouseover", addIngredient)
     
     draggables.call(drag)

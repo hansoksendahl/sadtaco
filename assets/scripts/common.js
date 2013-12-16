@@ -85,6 +85,8 @@ function checkWin() {
     
     body.style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
     
+    taco.select("#game").style("cursor", "pointer")
+    
     shell.on("click", eatMe)
   }
 }

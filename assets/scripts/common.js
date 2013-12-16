@@ -38,6 +38,7 @@ function reinit () {
     draggables = d3.selectAll(".cheese, .meat, .leaf, .tomato")
     
     draggables
+        .attr("onclick", "void(0)")
         .on("mousedown", setIngredient)
         .style("cursor", "move")
     

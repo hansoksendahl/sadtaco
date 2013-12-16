@@ -100,6 +100,7 @@
    id="path84-9"
    style="fill:url(#linearGradient3892);fill-opacity:1;stroke:#2f1010;stroke-width:6.49701452;stroke-miterlimit:10"
    class="shell"
+   onclick="void(0)"
    inkscape:connector-curvature="0" /><g
    id="tomato0"
    style="display:none"><circle
@@ -539,6 +540,7 @@
    id="front"
    style="fill:url(#linearGradient3884);fill-opacity:1;stroke:#2f1010;stroke-width:6.49701452;stroke-miterlimit:10"
    class="shell"
+   onclick="void(0)"
    inkscape:connector-curvature="0" /><ellipse
    cx="176.33299"
    cy="307"

@@ -7,6 +7,11 @@
                 .attr(properties.attr)
                 .on(properties.on)
                 .style(properties.style)
+            
+            // This tomfollery is neccesary because element.data returns a
+            // deferred reference to our original selection.  That is why it
+            // cannot fall in with the method chain above.
+            element.data(properties.data || [{}])
 
             if (properties.children) {
                 properties.children.forEach(function(child) {
@@ -18,7 +23,7 @@
         // OX-IDE
     d3.oxide = function() {
         function oxide(selection) {
-            selection.each(function(d, i) {
+            return selection.each(function(d, i) {
                 var self = this
 
                 elements.forEach(function(node) {
@@ -72,7 +77,7 @@
                 img = new Image()
 
                 img.onload = function() {
-                    callback.call(element, [img.width, img.height])
+                    (callback || element.__onload).call(element, [img.width, img.height])
                     delete(img)
                 }
 

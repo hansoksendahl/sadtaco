@@ -1,27 +1,107 @@
 var body = d3.select(document.body)
-  , vis = d3.oxide()
-  , elements = []
-  , stage
+  , svg
+  , taco
+  , shell
+  , frown
+  , heart
+  , smile
+  , tag
+  , drag
+  , draggables
+  , speech
+  , ingredient
+  , list = {
+    meat: 1,
+    leaf: 3,
+    tomato: 2,
+    cheese: 1
+  }
 
-function reinit (elements) {
-    vis.elements([].concat(elements))
-    vis(body)
+function reinit () {
+  taco = d3.select("#taco")
+  
+  taco.remove()
+  
+  d3.xml("assets/images/sadtaco2.svg", "image/svg+xml", function(xml) {
+    svg = xml.documentElement
+    body[0][0].appendChild(document.importNode(svg, true))
     
-    stage = d3.select("#stage")
+    taco = d3.select("#taco")
+    shell = d3.selectAll(".shell")
+    frown = d3.select("#mouth0")
+    smile = d3.select("#mouth1")
+    heart = d3.select("#heart")
+    drag = d3.behavior.drag()
+    draggables = d3.selectAll(".cheese, .meat, .leaf, .tomato")
+    
+    draggables
+        .on("mousedown", setIngredient)
+        .style("cursor", "move")
+    
+    speech = d3.select("#speechBubble")
+    
+    drag
+        .on("drag", dragged)
+        .on("dragend", function () { return true })
+    
+    shell
+        .on("mouseup", addIngredient)
+    
+    draggables.call(drag)
+    
     resize()
+  })
+}
+
+function setIngredient () {
+  ingredient = d3.select(this)
+  
+  ingredient.style("box-shadow", "0px 5px 10px #000")
+  
+  speech.style("display", "none")
+}
+
+function addIngredient () {
+  if (ingredient) {
+    var ingredientName = ingredient.attr("class")
+    list[ingredientName] -= 1
+    
+    d3.select("#"+ingredientName+list[ingredientName]).style("display", null)
+    ingredient.remove()
+    
+    ingredient = void(0)
+    checkWin()
+  }
+}
+
+function checkWin() {
+  if(list.meat === 0 && list.leaf === 0 && list.tomato === 0 && list.cheese === 0) {
+    frown.style("display", "none")
+    smile.style("display", null)
+    heart.style("display", null)
+    
+    body.style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
+  }
+}
+
+
+function dragged (d, i) {
+  var bBox = this.getBBox()
+  this.setAttribute("x", d3.event.x - bBox.x - bBox.width / 2)
+  this.setAttribute("y", d3.event.y - bBox.y - bBox.height / 2)
 }
 
 function resize () {
-    var stageDim = [stage[0][0].clientWidth, stage[0][0].clientHeight]
+  taco
+    .attr("width", body[0][0].clientWidth)
+    .attr("height", body[0][0].clientHeight)
     
-    var max = (stageDim[0] > stageDim[1]) ? stageDim[0] : stageDim[1]
-    redraw()
+  window.onresize = resize
+  
+  redraw()
 }
 
 function redraw () {
-    d3.oxide.imageAutoLoad(body.select("image")[0][0])
 }
 
-function rescale () {
-    
-}
+reinit()

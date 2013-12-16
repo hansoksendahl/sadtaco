@@ -91,7 +91,8 @@ function checkWin() {
 
 function eatMe() {
   taco.select("#game").style("display", "none")
-  d3.select("#eatMe, #tag, #heart").style("display", null)
+  d3.select("#eatMe, #tag, #heart")
+    .style("display", null)
     .style("cursor", "pointer")
     .on("click", reinit)
 }

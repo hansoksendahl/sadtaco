@@ -44,6 +44,7 @@ function reinit () {
         .on("touchstart", setIngredient)
         .on("mousedown", setIngredient)
         .on("touchend", addIngredient)
+        .on("mouseup", addIngredient)
 
     
     speech = d3.select("#speechBubble")

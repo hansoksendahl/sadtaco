@@ -104,10 +104,21 @@ function eatMe() {
     .style("cursor", "pointer")
     .on("click", reinit)
   
+  var mouth2 = eatMe.select("#mouth2")
+    , mouth3 = eatMe.select("#mouth3")
+  
+  mouth2.style("display", "none")
+  mouth3.style("display", null)
+  
   setTimeout(function () {
-    eatMe.select("#mouth2").style("display", "none")
-    eatMe.select("#mouth3").style("display", null)
-  }, 500)
+    mouth3.style("display", "none")
+    mouth2.style("display", null)
+    
+    setTimeout(function () {
+      mouth2.style("display", "none")
+      mouth3.style("display", null)
+    }, 600)
+  }, 300)
 }
 
 

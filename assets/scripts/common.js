@@ -23,7 +23,9 @@ function reinit () {
   
   taco.remove()
   
-  body.style("background", "linear-gradient(to bottom, LightSlateGray  0%, dimgray 100%)")
+  body
+      .style("background-color", "LightSlateGray")
+      .style("background", "linear-gradient(to bottom, LightSlateGray  0%, dimgray 100%)")
   
   d3.xml("assets/images/sadtaco2.svg", "image/svg+xml", function(xml) {
     svg = xml.documentElement
@@ -83,7 +85,9 @@ function checkWin() {
     smile.style("display", null)
     heart.style("display", null)
     
-    body.style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
+    body
+        .style("background-color", "hotpink")
+        .style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
     
     taco.select("#game").style("cursor", "pointer")
     

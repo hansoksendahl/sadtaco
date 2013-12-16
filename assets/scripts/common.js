@@ -98,10 +98,15 @@ function checkWin() {
 
 function eatMe() {
   taco.select("#game").style("display", "none")
-  d3.select("#eatMe, #tag, #heart")
+  var eatMe = d3.select("#eatMe, #tag, #heart")
     .style("display", null)
     .style("cursor", "pointer")
     .on("click", reinit)
+  
+  setTimeout(function () {
+    eatMe.select("#mouth2").style("display", "none")
+    eatMe.select("#mouth3").style("display", null)
+  }, 500)
 }
 
 

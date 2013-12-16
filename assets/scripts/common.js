@@ -93,7 +93,6 @@ function checkWin() {
     taco.select("#game").style("cursor", "pointer")
     
     shell.on("click", eatMe)
-    setTimeout(eatMe, 2000)
   }
 }
 

@@ -116,7 +116,7 @@ function eatMe() {
     setTimeout(function () {
       mouth2.style("display", "none")
       mouth3.style("display", null)
-    }, 600)
+    }, 400)
   }, 300)
 }
 

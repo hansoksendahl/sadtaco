@@ -22,6 +22,8 @@ function reinit () {
   
   taco.remove()
   
+  body.style("background", "linear-gradient(to bottom, LightSlateGray  0%, dimgray 100%)")
+  
   d3.xml("assets/images/sadtaco2.svg", "image/svg+xml", function(xml) {
     svg = xml.documentElement
     body[0][0].appendChild(document.importNode(svg, true))
@@ -81,7 +83,15 @@ function checkWin() {
     heart.style("display", null)
     
     body.style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
+    
+    shell.on("click", eatMe)
   }
+}
+
+function eatMe() {
+  taco.select("#game").style("display", "none")
+  d3.select("#eatMe, #tag, #heart").style("display", null)
+    .on("click", reinit)
 }
 
 
@@ -93,8 +103,8 @@ function dragged (d, i) {
 
 function resize () {
   taco
-    .attr("width", body[0][0].clientWidth)
-    .attr("height", body[0][0].clientHeight)
+    .attr("width", body[0][0].offsetWidth)
+    .attr("height", body[0][0].offsetHeight)
     
   window.onresize = resize
   

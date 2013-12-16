@@ -1,9 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Chewy);
+
 html, body {
   height: 100%;
-  font-family: sans-serif;
-  background-image: linear-gradient(to bottom, LightSlateGray  0%, dimgray 100%);
+  font-family: 'Chewy', sans-serif;
 }
 
 body {
   margin: 0;
+  overflow: hidden;
 }

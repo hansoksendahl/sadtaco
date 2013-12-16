@@ -38,16 +38,16 @@ function reinit () {
     draggables = d3.selectAll(".cheese, .meat, .leaf, .tomato")
     
     draggables
-        .on("mousedown", setIngredient)
         .style("cursor", "move")
-        .attr("touchstart", "setIngredient")
+                .on("touchstart", setIngredient)
+        .on("mousedown", setIngredient)
 
     
     speech = d3.select("#speechBubble")
     
     drag
+
         .on("drag", dragged)
-        .on("dragend", function () { return true })
     
     shell
         .on("mouseup", addIngredient)
@@ -59,7 +59,6 @@ function reinit () {
 }
 
 function setIngredient () {
-  console.log(this)
   ingredient = d3.select(this)
   
   ingredient.style("box-shadow", "0px 5px 10px #000")

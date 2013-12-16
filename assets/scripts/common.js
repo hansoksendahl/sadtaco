@@ -45,10 +45,7 @@ function reinit () {
     
     drag
         .on("drag", dragged)
-        .on("dragend", function () { return true })
-    
-    shell
-        .on("mouseup", addIngredient)
+        .on("dragend", addIngredient)
     
     draggables.call(drag)
     

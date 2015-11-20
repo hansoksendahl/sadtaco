@@ -98,7 +98,6 @@ function checkWin() {
 
 function eatMe() {
   taco.select("#game").style("display", "none")
-    .on("click", reinit)
   
   var eatMe = d3.select("#eatMe, #tag, #heart")
     .style("display", null)
@@ -117,6 +116,8 @@ function eatMe() {
     setTimeout(function () {
       mouth2.style("display", "none")
       mouth3.style("display", null)
+      
+      taco.select("#game").on("click", reinit)
     }, 400)
   }, 300)
 }

@@ -98,10 +98,11 @@ function checkWin() {
 
 function eatMe() {
   taco.select("#game").style("display", "none")
+    .on("click", reinit)
+  
   var eatMe = d3.select("#eatMe, #tag, #heart")
     .style("display", null)
     .style("cursor", "pointer")
-    .on("click", reinit)
   
   var mouth2 = eatMe.select("#mouth2")
     , mouth3 = eatMe.select("#mouth3")

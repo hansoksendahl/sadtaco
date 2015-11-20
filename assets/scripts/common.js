@@ -91,8 +91,7 @@ function checkWin() {
         .style("background", "linear-gradient(0deg, hsl(0,100%,100%), hotpink)")
     
     taco.select("#game").style("cursor", "pointer")
-    
-    shell.on("click", eatMe)
+      .on("click", eatMe)
   }
 }
 
@@ -117,7 +116,7 @@ function eatMe() {
       mouth2.style("display", "none")
       mouth3.style("display", null)
       
-      taco.select("#game").on("click", reinit)
+      taco.select("#eatMe").on("click", reinit)
     }, 400)
   }, 300)
 }
